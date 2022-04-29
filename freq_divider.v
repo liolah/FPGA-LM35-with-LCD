@@ -1,17 +1,10 @@
-module freq_divider (clk, rst, out);
-// Divides the frequency by 64
-input clk, rst;
-reg [28:0] count = 29'b0;
-output reg out;
-always @(posedge clk, posedge rst) 
+module freq_divider (clk, count);
+input clk;
+output reg count;
+reg [28:0] count_temp;
+always@(posedge clk)
 begin
-if (rst) begin
-count = 29'b0;
-end
-else 
-begin
-count = count + 1'b1;
-out = count[26];
-end
+count_temp = count_temp + 29'b1;
+count = count_temp[24];
 end
 endmodule

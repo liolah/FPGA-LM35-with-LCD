@@ -52,23 +52,11 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk_spd_test",
+					"strict" : false
+				},
+				{
 					"name" : "adc[7]",
-					"strict" : false
-				},
-				{
-					"name" : "adc[5]",
-					"strict" : false
-				},
-				{
-					"name" : "adc[6]",
-					"strict" : false
-				},
-				{
-					"name" : "adc[4]",
-					"strict" : false
-				},
-				{
-					"name" : "adc[3]",
 					"strict" : false
 				},
 				{
@@ -84,11 +72,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "adc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[3]",
 					"strict" : false
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
 					"strict" : false
 				}
 			]

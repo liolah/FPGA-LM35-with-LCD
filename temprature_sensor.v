@@ -10,7 +10,7 @@ wire clk_div;
 wire [15:0] bcd_out;
 
 led_ctrl i0 (adc, led_state);
-freq_divider i1 (clk, rst, clk_div);
+freq_divider i1 (clk, clk_div);
 bin_bcd i2 (adc, bcd_out);
 lcd_ctrl i3 (clk_div, rst, intr, bcd_out, wr, lcd_data, en, rs);
 
