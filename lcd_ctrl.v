@@ -6,7 +6,6 @@ input [15:0] bcd;
 output reg rs, en, wr;
 output reg [7:0] lcd_data;
 
-// reg [3:0] i = 4'b0000;
 parameter s0 = 5'b00000,
           s1 = 5'b00001,
           s2 = 5'b00010,
@@ -60,33 +59,13 @@ s4:begin
 next_state = s5;
 end
 s5:begin
-// case(i)
-// 4'b0000: begin
-// next_state = s4;
-// i = i + 4'b0011;
-// end
-// 4'b0011: begin
 next_state = s6;
-// i = 4'b0100;
-// end
-// 4'b0111: begin
-// next_state = s4;
-// i = 4'b0100;
-// end
-// 4'b1011: begin
-// next_state = s8;
-// i = 4'b0000;
-// end
-
-// default: i = 4'b0000;
-// endcase
 end
 s6:begin
 next_state = s7;
 end
 s7:begin
 next_state = s8;
-// next_state = s4;
 end
 s8:begin
 next_state = s9;
@@ -104,7 +83,25 @@ s12:begin
 next_state = s13;
 end
 s13:begin
-next_state = s2;
+next_state = s14;
+end
+s14:begin
+next_state = s15;
+end
+s15:begin
+next_state = s16;
+end
+s16:begin
+next_state = s17;
+end
+s17:begin
+next_state = s18;
+end
+s18:begin
+next_state = s19;
+end
+s19:begin
+next_state = s0;
 end
 
 default: next_state = s0;
@@ -115,7 +112,6 @@ always @(posedge clk, posedge rst)
 begin: register_generation
 if (rst) begin
 current_state = s0;
-// i = 4'b0000;
 end
 else begin
 current_state = next_state;
@@ -154,100 +150,92 @@ en = 1;
 rs = 1;
 wr = 1;
 lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
 end
 s5: begin
 en = 0;
 rs = 1;
 wr = 1;
 lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s4: begin
-en = 1;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s5: begin
-en = 0;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s4: begin
-en = 1;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s5: begin
-en = 0;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s4: begin
-en = 1;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
-end
-s5: begin
-en = 0;
-rs = 1;
-wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
-// lcd_data = { 4'b0011, bcd[4'b0011 + i], bcd[4'b0010 + i], bcd[4'b0001 + i], bcd[i] };
 end
 s6: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = point;
+lcd_data = { 4'b0011, bcd[7:4] };
 end
 s7: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = point;
+lcd_data = { 4'b0011, bcd[7:4] };
 end
 s8: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = space;
+lcd_data = { 4'b0011, bcd[11:8] };
 end
 s9: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = space;
+lcd_data = { 4'b0011, bcd[11:8] };
 end
 s10: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = deg_symbol;
+lcd_data = { 4'b0011, bcd[15:12] };
 end
 s11: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = deg_symbol;
+lcd_data = { 4'b0011, bcd[15:12] };
 end
 s12: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = c;
+lcd_data = point;
 end
 s13: begin
+en = 0;
+rs = 1;
+wr = 1;
+lcd_data = point;
+end
+s14: begin
+en = 1;
+rs = 1;
+wr = 1;
+lcd_data = space;
+end
+s15: begin
+en = 0;
+rs = 1;
+wr = 1;
+lcd_data = space;
+end
+s16: begin
+en = 1;
+rs = 1;
+wr = 1;
+lcd_data = deg_symbol;
+end
+s17: begin
+en = 0;
+rs = 1;
+wr = 1;
+lcd_data = deg_symbol;
+end
+s18: begin
+en = 1;
+rs = 1;
+wr = 1;
+lcd_data = c;
+end
+s19: begin
 en = 0;
 rs = 1;
 wr = 1;
