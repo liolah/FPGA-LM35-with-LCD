@@ -1,0 +1,44 @@
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+
+# Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# File: C:\Users\hesha\Desktop\Digital Electronics Project\Code_external_ADC\temprature_sensor.csv
+# Generated on: Fri Apr 29 07:56:51 2022
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+adc[7],Input,PIN_A5,8,B8_N0,PIN_A5,2.5 V,,,,,
+adc[6],Input,PIN_B6,8,B8_N0,PIN_B6,2.5 V,,,,,
+adc[5],Input,PIN_B7,8,B8_N0,PIN_B7,2.5 V,,,,,
+adc[4],Input,PIN_A7,8,B8_N0,PIN_A7,2.5 V,,,,,
+adc[3],Input,PIN_C8,8,B8_N0,PIN_C8,2.5 V,,,,,
+adc[2],Input,PIN_E7,8,B8_N0,PIN_E7,2.5 V,,,,,
+adc[1],Input,PIN_E8,8,B8_N0,PIN_E8,2.5 V,,,,,
+adc[0],Input,PIN_F9,7,B7_N0,PIN_F9,2.5 V,,,,,
+clk,Input,PIN_R8,3,B3_N0,PIN_R8,2.5 V,,,,,
+en,Output,PIN_D9,7,B7_N0,PIN_D9,2.5 V,,,,,
+intr,Input,PIN_A4,8,B8_N0,PIN_A4,2.5 V,,,,,
+lcd_data[7],Output,PIN_D5,8,B8_N0,PIN_D5,2.5 V,,,,,
+lcd_data[6],Output,PIN_A6,8,B8_N0,PIN_A6,2.5 V,,,,,
+lcd_data[5],Output,PIN_D6,8,B8_N0,PIN_D6,2.5 V,,,,,
+lcd_data[4],Output,PIN_C6,8,B8_N0,PIN_C6,2.5 V,,,,,
+lcd_data[3],Output,PIN_E6,8,B8_N0,PIN_E6,2.5 V,,,,,
+lcd_data[2],Output,PIN_D8,8,B8_N0,PIN_D8,2.5 V,,,,,
+lcd_data[1],Output,PIN_F8,8,B8_N0,PIN_F8,2.5 V,,,,,
+lcd_data[0],Output,PIN_E9,7,B7_N0,PIN_E9,2.5 V,,,,,
+led_state,Output,PIN_B5,8,B8_N0,PIN_B5,2.5 V,,,,,
+rs,Output,PIN_E10,7,B7_N0,PIN_E10,2.5 V,,,,,
+rst,Input,PIN_J15,5,B5_N0,PIN_J15,2.5 V,,,,,
+wr,Output,PIN_B3,8,B8_N0,PIN_B3,2.5 V,,,,,

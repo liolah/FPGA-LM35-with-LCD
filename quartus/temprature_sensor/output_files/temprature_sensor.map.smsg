@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at lcd_ctrl.v(95): always construct contains both blocking and non-blocking assignments File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/lcd_ctrl.v Line: 95

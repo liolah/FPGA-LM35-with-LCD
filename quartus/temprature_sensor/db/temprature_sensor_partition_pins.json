@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "rs",
+					"strict" : false
+				},
+				{
+					"name" : "wr",
+					"strict" : false
+				},
+				{
+					"name" : "led_state",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "intr",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,134 @@
+|temprature_sensor
+clk => clk.IN1
+rst => rst.IN2
+intr => intr.IN1
+adc[0] => adc[0].IN2
+adc[1] => adc[1].IN2
+adc[2] => adc[2].IN2
+adc[3] => adc[3].IN2
+adc[4] => adc[4].IN2
+adc[5] => adc[5].IN2
+adc[6] => adc[6].IN2
+adc[7] => adc[7].IN2
+en << lcd_ctrl:i3.port6
+rs << lcd_ctrl:i3.port7
+wr << lcd_ctrl:i3.port4
+led_state << led_ctrl:i0.port1
+lcd_data[0] << lcd_ctrl:i3.port5
+lcd_data[1] << lcd_ctrl:i3.port5
+lcd_data[2] << lcd_ctrl:i3.port5
+lcd_data[3] << lcd_ctrl:i3.port5
+lcd_data[4] << lcd_ctrl:i3.port5
+lcd_data[5] << lcd_ctrl:i3.port5
+lcd_data[6] << lcd_ctrl:i3.port5
+lcd_data[7] << lcd_ctrl:i3.port5
+
+
+|temprature_sensor|led_ctrl:i0
+din[0] => LessThan0.IN16
+din[1] => LessThan0.IN15
+din[2] => LessThan0.IN14
+din[3] => LessThan0.IN13
+din[4] => LessThan0.IN12
+din[5] => LessThan0.IN11
+din[6] => LessThan0.IN10
+din[7] => LessThan0.IN9
+led <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temprature_sensor|freq_divider:i1
+clk => out~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+rst => out~reg0.ENA
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|temprature_sensor|bin_bcd:i2
+bin[0] => bcd[5].DATAIN
+bin[0] => bcd[2].DATAIN
+bin[0] => bcd[0].DATAIN
+bin[1] => bcd[6].DATAIN
+bin[1] => bcd[4].DATAIN
+bin[2] => bcd[8].DATAIN
+bin[3] => LessThan2.IN8
+bin[3] => Add2.IN8
+bin[3] => bcd.DATAA
+bin[4] => LessThan1.IN8
+bin[4] => Add1.IN8
+bin[4] => bcd.DATAA
+bin[5] => LessThan0.IN6
+bin[5] => Add0.IN6
+bin[5] => bcd.DATAA
+bin[6] => LessThan0.IN5
+bin[6] => Add0.IN5
+bin[6] => bcd.DATAA
+bin[7] => LessThan0.IN4
+bin[7] => Add0.IN4
+bin[7] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= <GND>
+bcd[2] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= <GND>
+bcd[4] <= bin[1].DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bin[1].DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= <GND>
+bcd[8] <= bin[2].DB_MAX_OUTPUT_PORT_TYPE
+bcd[9] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[10] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[11] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[12] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[13] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[14] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[15] <= <GND>
+
+
+|temprature_sensor|lcd_ctrl:i3
+clk => current_state~1.DATAIN
+rst => current_state~3.DATAIN
+intr => Selector0.IN3
+intr => next_state.s4.DATAB
+bcd[0] => Selector4.IN5
+bcd[1] => Selector3.IN5
+bcd[2] => Selector2.IN5
+bcd[3] => Selector1.IN5
+bcd[4] => ~NO_FANOUT~
+bcd[5] => ~NO_FANOUT~
+bcd[6] => ~NO_FANOUT~
+bcd[7] => ~NO_FANOUT~
+bcd[8] => ~NO_FANOUT~
+bcd[9] => ~NO_FANOUT~
+bcd[10] => ~NO_FANOUT~
+bcd[11] => ~NO_FANOUT~
+bcd[12] => ~NO_FANOUT~
+bcd[13] => ~NO_FANOUT~
+bcd[14] => ~NO_FANOUT~
+bcd[15] => ~NO_FANOUT~
+wr <= wr.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[0] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[1] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[2] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[3] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[4] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[5] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[6] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[7] <= lcd_data.DB_MAX_OUTPUT_PORT_TYPE
+en <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+rs <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+
+
