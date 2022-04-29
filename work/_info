@@ -49,7 +49,7 @@ R7
 !i113 1
 R8
 Ehard_block
-Z9 w1651260009
+Z9 w1651261831
 Z10 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z11 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z12 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -65,9 +65,9 @@ VX3h66Qc`1<U_AEbLaz?3J3
 !s100 A`ID_i56<Ua56=ZD=[EG=2
 Z18 OV;C;10.5b;63
 32
-Z19 !s110 1651261679
+Z19 !s110 1651262004
 !i10b 1
-Z20 !s108 1651261679.000000
+Z20 !s108 1651262004.000000
 Z21 !s90 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
 Z22 !s107 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
 !i113 1
@@ -79,11 +79,11 @@ R12
 R13
 R14
 R15
-DEx4 work 10 hard_block 0 22 X3h66Qc`1<U_AEbLaz?3J3
+Z24 DEx4 work 10 hard_block 0 22 X3h66Qc`1<U_AEbLaz?3J3
 l64
 L50
-V__ALokoYT=OF5a6[iF8bT3
-!s100 2S?JL;LJ@<3:BHXTNcXS]3
+Z25 V__ALokoYT=OF5a6[iF8bT3
+Z26 !s100 2S?JL;LJ@<3:BHXTNcXS]3
 R18
 32
 R19
@@ -134,65 +134,94 @@ R7
 !i113 1
 R8
 vtemp_sensor
-Z24 !s110 1651211025
+Z27 !s110 1651211025
 !i10b 1
 !s100 ZB@XTOTzEij6VT0IREARj3
 I>bl_QJ3GY2@FJX4k<>zXY1
 R2
 R0
 w1651210879
-Z25 8temprature_sensor.v
-Z26 Ftemprature_sensor.v
+Z28 8temprature_sensor.v
+Z29 Ftemprature_sensor.v
 L0 1
 R4
 r1
 !s85 0
 31
-Z27 !s108 1651211025.000000
+Z30 !s108 1651211025.000000
 R6
 R7
 !i113 1
 R8
 vtemp_sensor_tb
-R24
+R27
 !i10b 1
 !s100 iH1;C5lo7D_lKS0RgH[Gz1
 Iel54Jz[D5m4BZ^h7FjcjJ3
 R2
 R0
 w1651210673
-Z28 8temprature_sensor_tb.v
-Z29 Ftemprature_sensor_tb.v
+Z31 8temprature_sensor_tb.v
+Z32 Ftemprature_sensor_tb.v
 L0 2
 R4
 r1
 !s85 0
 31
-R27
+R30
 R6
 R7
 !i113 1
 R8
-vtemprature_sensor
-R1
-!i10b 1
-!s100 NHYb@=KWJoS=hKfLbm`V[1
-I6dXfSHzO5Z_RXNzUc;Un`2
-R2
+Etemprature_sensor
+R9
+R11
+R15
+R10
+Z33 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+R12
+R13
+R14
+Z34 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
 R3
-w1651246163
-R25
-R26
-L0 1
-R4
-r1
-!s85 0
-31
-R5
-R6
-R7
+R16
+R17
+l0
+L79
+V_j90^2NE6eX>KB=L1c2Ab2
+!s100 7`H4ecW0S7iVSm2BU6kQ<0
+R18
+32
+R19
+!i10b 1
+R20
+R21
+R22
 !i113 1
-R8
+R23
+Astructure
+R11
+R15
+R10
+R33
+R12
+R13
+R14
+R34
+DEx4 work 17 temprature_sensor 0 22 _j90^2NE6eX>KB=L1c2Ab2
+l270
+L119
+VZ:7faaT`[><9:nfIoXo4E3
+!s100 6>An28MNFRF7kALgk;_4j3
+R18
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R23
 vtemprature_sensor_tb
 R1
 !i10b 1
@@ -201,8 +230,8 @@ IHQJ@YMaiKORReYLzD?I:Q3
 R2
 R3
 w1651211222
-R28
-R29
+R31
+R32
 L0 2
 R4
 r1
