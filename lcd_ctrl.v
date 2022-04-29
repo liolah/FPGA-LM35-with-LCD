@@ -149,61 +149,61 @@ s4: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
+lcd_data = { 4'b0011, bcd[15:12] };
 end
 s5: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
+lcd_data = { 4'b0011, bcd[15:12] };
 end
 s6: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[7:4] };
+lcd_data = { 4'b0011, bcd[11:8] };
 end
 s7: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[7:4] };
+lcd_data = { 4'b0011, bcd[11:8] };
 end
 s8: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[11:8] };
+lcd_data = point;
 end
 s9: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[11:8] };
+lcd_data = point;
 end
 s10: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[15:12] };
+lcd_data = { 4'b0011, bcd[7:4] };
 end
 s11: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[15:12] };
+lcd_data = { 4'b0011, bcd[7:4] };
 end
 s12: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = point;
+lcd_data = { 4'b0011, bcd[3:0] };
 end
 s13: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = point;
+lcd_data = { 4'b0011, bcd[3:0] };
 end
 s14: begin
 en = 1;

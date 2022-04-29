@@ -1,5 +1,5 @@
 Timing Analyzer report for temprature_sensor
-Fri Apr 29 11:26:10 2022
+Fri Apr 29 12:06:48 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -109,7 +109,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.2%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processors 3-4         ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -128,8 +129,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+---------------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note                                                          ;
 +------------+-----------------+---------------------+---------------------------------------------------------------+
-; 503.27 MHz ; 250.0 MHz       ; clk                 ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 909.92 MHz ; 500.0 MHz       ; freq_divider:i1|out ; limit due to minimum period restriction (tmin)                ;
+; 503.02 MHz ; 250.0 MHz       ; clk                 ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 940.73 MHz ; 500.0 MHz       ; freq_divider:i1|out ; limit due to minimum period restriction (tmin)                ;
 +------------+-----------------+---------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -145,8 +146,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk                 ; -0.987 ; -3.297        ;
-; freq_divider:i1|out ; -0.099 ; -0.158        ;
+; clk                 ; -0.988 ; -3.303        ;
+; freq_divider:i1|out ; -0.063 ; -0.111        ;
 +---------------------+--------+---------------+
 
 
@@ -156,7 +157,7 @@ HTML report is unavailable in plain text report export.
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
 ; freq_divider:i1|out ; 0.358 ; 0.000         ;
-; clk                 ; 0.361 ; 0.000         ;
+; clk                 ; 0.360 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -178,7 +179,7 @@ No paths to report.
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
 ; clk                 ; -3.000 ; -10.000            ;
-; freq_divider:i1|out ; -1.000 ; -14.000            ;
+; freq_divider:i1|out ; -1.000 ; -20.000            ;
 +---------------------+--------+--------------------+
 
 
@@ -187,80 +188,92 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -0.987 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.920      ;
-; -0.910 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.843      ;
-; -0.906 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.839      ;
-; -0.875 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.808      ;
-; -0.794 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.727      ;
-; -0.679 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.612      ;
-; -0.602 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.535      ;
-; -0.598 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.531      ;
-; -0.567 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.500      ;
-; -0.564 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.497      ;
-; -0.563 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.496      ;
-; -0.562 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.495      ;
-; -0.557 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.490      ;
-; -0.486 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.419      ;
-; -0.486 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.419      ;
-; -0.482 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.415      ;
-; -0.476 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.062     ; 1.409      ;
-; -0.448 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.381      ;
-; -0.446 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.379      ;
-; -0.445 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.378      ;
-; -0.172 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.062     ; 1.105      ;
-; -0.056 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.989      ;
-; -0.056 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.989      ;
-; -0.050 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.983      ;
-; -0.031 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.964      ;
-; -0.028 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.961      ;
-; 0.274  ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 1.000        ; -0.062     ; 0.659      ;
+; -0.988 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.920      ;
+; -0.911 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.843      ;
+; -0.907 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.839      ;
+; -0.876 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.808      ;
+; -0.795 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.727      ;
+; -0.680 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.612      ;
+; -0.603 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.535      ;
+; -0.599 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.531      ;
+; -0.568 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.500      ;
+; -0.565 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.497      ;
+; -0.564 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.496      ;
+; -0.563 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.495      ;
+; -0.558 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.490      ;
+; -0.487 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.419      ;
+; -0.487 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.419      ;
+; -0.483 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.415      ;
+; -0.475 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.063     ; 1.407      ;
+; -0.449 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.381      ;
+; -0.447 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.379      ;
+; -0.446 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.378      ;
+; -0.171 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.063     ; 1.103      ;
+; -0.057 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.989      ;
+; -0.057 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.989      ;
+; -0.051 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.983      ;
+; -0.032 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.964      ;
+; -0.029 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.961      ;
+; 0.273  ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 1.000        ; -0.063     ; 0.659      ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'freq_divider:i1|out'                                                                                                           ;
-+--------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack  ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+--------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; -0.099 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 1.032      ;
-; -0.059 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.992      ;
-; 0.039  ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.894      ;
-; 0.068  ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.865      ;
-; 0.068  ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.865      ;
-; 0.070  ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.863      ;
-; 0.074  ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.859      ;
-; 0.079  ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.854      ;
-; 0.098  ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.835      ;
-; 0.201  ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.732      ;
-; 0.202  ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.731      ;
-; 0.211  ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.722      ;
-; 0.216  ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.717      ;
-; 0.236  ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.697      ;
-; 0.296  ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.637      ;
-+--------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'freq_divider:i1|out'                                                                                                              ;
++--------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; -0.063 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.996      ;
+; -0.048 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.981      ;
+; 0.047  ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.886      ;
+; 0.064  ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.869      ;
+; 0.066  ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.867      ;
+; 0.066  ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.867      ;
+; 0.068  ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.865      ;
+; 0.069  ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.864      ;
+; 0.087  ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.846      ;
+; 0.088  ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.063     ; 0.844      ;
+; 0.088  ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.845      ;
+; 0.103  ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.061     ; 0.831      ;
+; 0.112  ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.821      ;
+; 0.200  ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.733      ;
+; 0.222  ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.711      ;
+; 0.223  ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.710      ;
+; 0.223  ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.710      ;
+; 0.226  ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.707      ;
+; 0.235  ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.698      ;
+; 0.245  ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.688      ;
+; 0.296  ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.062     ; 0.637      ;
++--------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'freq_divider:i1|out'                                                                                                           ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; 0.358 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.577      ;
-; 0.381 ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.600      ;
-; 0.400 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.619      ;
-; 0.402 ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.621      ;
-; 0.405 ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.624      ;
-; 0.409 ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.628      ;
-; 0.519 ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.738      ;
-; 0.537 ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.756      ;
-; 0.539 ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.758      ;
-; 0.542 ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.761      ;
-; 0.542 ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.761      ;
-; 0.544 ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.763      ;
-; 0.569 ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.788      ;
-; 0.590 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.809      ;
-; 0.705 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.924      ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'freq_divider:i1|out'                                                                                                              ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.358 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.577      ;
+; 0.374 ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.593      ;
+; 0.381 ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.600      ;
+; 0.385 ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.604      ;
+; 0.386 ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.605      ;
+; 0.389 ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.608      ;
+; 0.395 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.614      ;
+; 0.409 ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.628      ;
+; 0.497 ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.716      ;
+; 0.524 ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.063      ; 0.744      ;
+; 0.525 ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.744      ;
+; 0.525 ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.744      ;
+; 0.533 ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.061      ; 0.751      ;
+; 0.538 ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.757      ;
+; 0.544 ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.763      ;
+; 0.545 ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.764      ;
+; 0.546 ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.765      ;
+; 0.546 ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.765      ;
+; 0.557 ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.776      ;
+; 0.670 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.889      ;
+; 0.680 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.062      ; 0.899      ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -268,33 +281,33 @@ No paths to report.
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; 0.361 ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.580      ;
-; 0.550 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.769      ;
-; 0.551 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.770      ;
-; 0.553 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.772      ;
-; 0.563 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.782      ;
-; 0.566 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.785      ;
-; 0.689 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 0.908      ;
-; 0.825 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.044      ;
-; 0.827 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.046      ;
-; 0.839 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.058      ;
-; 0.840 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.059      ;
-; 0.841 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.060      ;
-; 0.841 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.060      ;
-; 0.842 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.061      ;
-; 0.843 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.062      ;
-; 0.935 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.154      ;
-; 0.937 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.156      ;
-; 0.952 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.171      ;
-; 0.953 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.172      ;
-; 0.954 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.173      ;
-; 0.955 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.062      ; 1.174      ;
-; 0.981 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.200      ;
-; 1.119 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.338      ;
-; 1.133 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.352      ;
-; 1.229 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.448      ;
-; 1.246 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.465      ;
-; 1.247 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.062      ; 1.466      ;
+; 0.360 ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.580      ;
+; 0.549 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.769      ;
+; 0.550 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.770      ;
+; 0.552 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.772      ;
+; 0.562 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.782      ;
+; 0.565 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.785      ;
+; 0.687 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 0.907      ;
+; 0.824 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.044      ;
+; 0.826 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.046      ;
+; 0.838 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.058      ;
+; 0.839 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.059      ;
+; 0.840 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.060      ;
+; 0.840 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.060      ;
+; 0.841 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.061      ;
+; 0.842 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.062      ;
+; 0.934 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.154      ;
+; 0.936 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.156      ;
+; 0.951 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.171      ;
+; 0.952 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.172      ;
+; 0.953 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.173      ;
+; 0.954 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.063      ; 1.174      ;
+; 0.979 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.199      ;
+; 1.118 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.338      ;
+; 1.132 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.352      ;
+; 1.228 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.448      ;
+; 1.245 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.465      ;
+; 1.246 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.063      ; 1.466      ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -309,8 +322,8 @@ No synchronizer chains to report.
 +-------------+-----------------+---------------------+---------------------------------------------------------------+
 ; Fmax        ; Restricted Fmax ; Clock Name          ; Note                                                          ;
 +-------------+-----------------+---------------------+---------------------------------------------------------------+
-; 565.61 MHz  ; 250.0 MHz       ; clk                 ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 1015.23 MHz ; 500.0 MHz       ; freq_divider:i1|out ; limit due to minimum period restriction (tmin)                ;
+; 565.93 MHz  ; 250.0 MHz       ; clk                 ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 1054.85 MHz ; 500.0 MHz       ; freq_divider:i1|out ; limit due to minimum period restriction (tmin)                ;
 +-------------+-----------------+---------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -320,8 +333,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk                 ; -0.768 ; -2.328        ;
-; freq_divider:i1|out ; 0.015  ; 0.000         ;
+; clk                 ; -0.767 ; -2.323        ;
+; freq_divider:i1|out ; 0.052  ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -331,7 +344,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
 ; freq_divider:i1|out ; 0.311 ; 0.000         ;
-; clk                 ; 0.319 ; 0.000         ;
+; clk                 ; 0.320 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -353,7 +366,7 @@ No paths to report.
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
 ; clk                 ; -3.000 ; -10.000           ;
-; freq_divider:i1|out ; -1.000 ; -14.000           ;
+; freq_divider:i1|out ; -1.000 ; -20.000           ;
 +---------------------+--------+-------------------+
 
 
@@ -362,80 +375,92 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -0.768 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.707      ;
-; -0.706 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.645      ;
-; -0.700 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.639      ;
-; -0.671 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.610      ;
-; -0.606 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.545      ;
-; -0.489 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.428      ;
-; -0.427 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.366      ;
-; -0.421 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.360      ;
-; -0.392 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.331      ;
-; -0.391 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.330      ;
-; -0.389 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.328      ;
-; -0.389 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.328      ;
-; -0.371 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.310      ;
-; -0.327 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.266      ;
-; -0.327 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.266      ;
-; -0.322 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.056     ; 1.261      ;
-; -0.321 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.260      ;
-; -0.291 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.230      ;
-; -0.289 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.228      ;
-; -0.288 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.056     ; 1.227      ;
-; -0.043 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.982      ;
-; 0.061  ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.878      ;
-; 0.061  ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.878      ;
-; 0.067  ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.872      ;
-; 0.076  ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.863      ;
-; 0.077  ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.862      ;
-; 0.356  ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 1.000        ; -0.056     ; 0.583      ;
+; -0.767 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.707      ;
+; -0.704 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.644      ;
+; -0.699 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.639      ;
+; -0.670 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.610      ;
+; -0.605 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.545      ;
+; -0.488 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.428      ;
+; -0.425 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.365      ;
+; -0.420 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.360      ;
+; -0.391 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.331      ;
+; -0.390 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.330      ;
+; -0.388 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.328      ;
+; -0.388 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.328      ;
+; -0.370 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.310      ;
+; -0.326 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.266      ;
+; -0.325 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.265      ;
+; -0.320 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.055     ; 1.260      ;
+; -0.320 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.260      ;
+; -0.290 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.230      ;
+; -0.288 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.228      ;
+; -0.287 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.055     ; 1.227      ;
+; -0.041 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.981      ;
+; 0.062  ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.878      ;
+; 0.063  ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.877      ;
+; 0.068  ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.872      ;
+; 0.077  ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.863      ;
+; 0.078  ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.862      ;
+; 0.357  ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.583      ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'freq_divider:i1|out'                                                                                                           ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; 0.015 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.924      ;
-; 0.059 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.880      ;
-; 0.136 ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.803      ;
-; 0.160 ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.779      ;
-; 0.163 ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.776      ;
-; 0.163 ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.776      ;
-; 0.172 ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.767      ;
-; 0.183 ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.756      ;
-; 0.189 ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.750      ;
-; 0.281 ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.658      ;
-; 0.290 ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.649      ;
-; 0.297 ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.642      ;
-; 0.303 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.636      ;
-; 0.322 ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.617      ;
-; 0.377 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.562      ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'freq_divider:i1|out'                                                                                                              ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.052 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.887      ;
+; 0.065 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.874      ;
+; 0.141 ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.798      ;
+; 0.157 ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.783      ;
+; 0.159 ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.780      ;
+; 0.160 ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.780      ;
+; 0.161 ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.778      ;
+; 0.162 ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.777      ;
+; 0.178 ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.761      ;
+; 0.179 ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.760      ;
+; 0.196 ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.743      ;
+; 0.201 ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.739      ;
+; 0.202 ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.738      ;
+; 0.288 ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.652      ;
+; 0.302 ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.638      ;
+; 0.309 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.630      ;
+; 0.311 ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.629      ;
+; 0.313 ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.627      ;
+; 0.320 ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.619      ;
+; 0.330 ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.055     ; 0.610      ;
+; 0.377 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.056     ; 0.562      ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'freq_divider:i1|out'                                                                                                            ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; 0.311 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.511      ;
-; 0.345 ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.545      ;
-; 0.359 ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.559      ;
-; 0.362 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.562      ;
-; 0.364 ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.564      ;
-; 0.370 ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.570      ;
-; 0.467 ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.667      ;
-; 0.482 ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.682      ;
-; 0.483 ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.683      ;
-; 0.488 ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.688      ;
-; 0.489 ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.689      ;
-; 0.501 ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.701      ;
-; 0.509 ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.709      ;
-; 0.528 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.728      ;
-; 0.641 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.841      ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'freq_divider:i1|out'                                                                                                               ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.311 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.511      ;
+; 0.339 ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.538      ;
+; 0.342 ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.541      ;
+; 0.346 ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.546      ;
+; 0.349 ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.548      ;
+; 0.353 ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.552      ;
+; 0.357 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.557      ;
+; 0.372 ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.571      ;
+; 0.439 ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.638      ;
+; 0.471 ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.671      ;
+; 0.473 ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.673      ;
+; 0.481 ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.681      ;
+; 0.482 ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.682      ;
+; 0.490 ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.690      ;
+; 0.490 ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.690      ;
+; 0.491 ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.690      ;
+; 0.493 ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.692      ;
+; 0.493 ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.055      ; 0.692      ;
+; 0.502 ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.702      ;
+; 0.609 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.809      ;
+; 0.617 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.056      ; 0.817      ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -443,33 +468,33 @@ No paths to report.
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; 0.319 ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.519      ;
-; 0.493 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.693      ;
-; 0.494 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.694      ;
-; 0.496 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.696      ;
-; 0.508 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.708      ;
-; 0.509 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.709      ;
-; 0.627 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.827      ;
-; 0.737 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.937      ;
-; 0.741 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.941      ;
-; 0.743 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.943      ;
-; 0.744 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.944      ;
-; 0.747 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.947      ;
-; 0.750 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.950      ;
-; 0.751 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.951      ;
-; 0.754 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.056      ; 0.954      ;
-; 0.826 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.026      ;
-; 0.833 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.033      ;
-; 0.840 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.040      ;
-; 0.843 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.043      ;
-; 0.847 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.047      ;
-; 0.850 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.050      ;
-; 0.895 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.095      ;
-; 1.009 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.209      ;
-; 1.018 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.218      ;
-; 1.101 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.301      ;
-; 1.115 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.315      ;
-; 1.118 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.056      ; 1.318      ;
+; 0.320 ; freq_divider:i1|count[0] ; freq_divider:i1|count[0] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.519      ;
+; 0.494 ; freq_divider:i1|count[2] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.693      ;
+; 0.495 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.694      ;
+; 0.497 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.696      ;
+; 0.509 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.708      ;
+; 0.510 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.709      ;
+; 0.627 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.826      ;
+; 0.738 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.937      ;
+; 0.742 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.941      ;
+; 0.744 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.943      ;
+; 0.745 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.944      ;
+; 0.748 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.947      ;
+; 0.751 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.950      ;
+; 0.752 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.951      ;
+; 0.755 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.055      ; 0.954      ;
+; 0.827 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.026      ;
+; 0.834 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.033      ;
+; 0.841 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.040      ;
+; 0.844 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.043      ;
+; 0.848 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.047      ;
+; 0.851 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.055      ; 1.050      ;
+; 0.894 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.093      ;
+; 1.009 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.208      ;
+; 1.018 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.217      ;
+; 1.101 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.300      ;
+; 1.115 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.314      ;
+; 1.118 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.055      ; 1.317      ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -484,8 +509,8 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk                 ; -0.110 ; -0.110        ;
-; freq_divider:i1|out ; 0.391  ; 0.000         ;
+; clk                 ; -0.109 ; -0.109        ;
+; freq_divider:i1|out ; 0.415  ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -494,7 +519,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; freq_divider:i1|out ; 0.187 ; 0.000         ;
+; freq_divider:i1|out ; 0.188 ; 0.000         ;
 ; clk                 ; 0.193 ; 0.000         ;
 +---------------------+-------+---------------+
 
@@ -517,7 +542,7 @@ No paths to report.
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
 ; clk                 ; -3.000 ; -10.378           ;
-; freq_divider:i1|out ; -1.000 ; -14.000           ;
+; freq_divider:i1|out ; -1.000 ; -20.000           ;
 +---------------------+--------+-------------------+
 
 
@@ -526,28 +551,28 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -0.110 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.060      ;
-; -0.069 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.019      ;
-; -0.066 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.016      ;
-; -0.046 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.996      ;
-; 0.003  ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.947      ;
+; -0.109 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.059      ;
+; -0.067 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.017      ;
+; -0.065 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 1.015      ;
+; -0.045 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.995      ;
+; 0.004  ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.946      ;
 ; 0.062  ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.888      ;
-; 0.103  ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.847      ;
+; 0.104  ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.846      ;
 ; 0.106  ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.844      ;
 ; 0.126  ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.824      ;
 ; 0.126  ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.824      ;
 ; 0.130  ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.820      ;
-; 0.134  ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.816      ;
+; 0.135  ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.815      ;
 ; 0.136  ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.814      ;
-; 0.171  ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.779      ;
-; 0.172  ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.778      ;
+; 0.172  ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.778      ;
+; 0.173  ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 1.000        ; -0.037     ; 0.777      ;
 ; 0.174  ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.776      ;
 ; 0.175  ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.775      ;
-; 0.202  ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.748      ;
+; 0.203  ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.747      ;
 ; 0.204  ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.746      ;
 ; 0.204  ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.746      ;
 ; 0.337  ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.613      ;
-; 0.406  ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.544      ;
+; 0.407  ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.543      ;
 ; 0.410  ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.540      ;
 ; 0.410  ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.540      ;
 ; 0.419  ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.531      ;
@@ -556,50 +581,62 @@ No paths to report.
 +--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'freq_divider:i1|out'                                                                                                           ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; 0.391 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.560      ;
-; 0.411 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.540      ;
-; 0.476 ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.475      ;
-; 0.478 ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.473      ;
-; 0.489 ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.462      ;
-; 0.494 ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.457      ;
-; 0.494 ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.457      ;
-; 0.502 ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.449      ;
-; 0.510 ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.441      ;
-; 0.552 ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.399      ;
-; 0.553 ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.398      ;
-; 0.558 ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.393      ;
-; 0.560 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.391      ;
-; 0.572 ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.379      ;
-; 0.601 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.350      ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'freq_divider:i1|out'                                                                                                              ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.415 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.537      ;
+; 0.424 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.528      ;
+; 0.482 ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.470      ;
+; 0.486 ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.036     ; 0.465      ;
+; 0.489 ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.463      ;
+; 0.490 ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.462      ;
+; 0.492 ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.460      ;
+; 0.492 ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.034     ; 0.461      ;
+; 0.492 ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.460      ;
+; 0.494 ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.458      ;
+; 0.502 ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.450      ;
+; 0.506 ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.446      ;
+; 0.511 ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.441      ;
+; 0.551 ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.401      ;
+; 0.566 ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.386      ;
+; 0.566 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.386      ;
+; 0.568 ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.384      ;
+; 0.570 ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.382      ;
+; 0.571 ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.381      ;
+; 0.580 ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.372      ;
+; 0.602 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 1.000        ; -0.035     ; 0.350      ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'freq_divider:i1|out'                                                                                                            ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; Slack ; From Node                      ; To Node                       ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
-; 0.187 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.307      ;
-; 0.199 ; lcd_ctrl:i3|current_state.s7   ; lcd_ctrl:i3|current_state.s8  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.319      ;
-; 0.209 ; lcd_ctrl:i3|current_state.s3   ; lcd_ctrl:i3|current_state.s4  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.329      ;
-; 0.211 ; lcd_ctrl:i3|current_state.s2   ; lcd_ctrl:i3|current_state.s3  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.331      ;
-; 0.215 ; lcd_ctrl:i3|current_state.s10  ; lcd_ctrl:i3|current_state.s11 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.335      ;
-; 0.220 ; lcd_ctrl:i3|current_state.0000 ; lcd_ctrl:i3|current_state.s1  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.340      ;
-; 0.270 ; lcd_ctrl:i3|current_state.s9   ; lcd_ctrl:i3|current_state.s10 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.390      ;
-; 0.278 ; lcd_ctrl:i3|current_state.s12  ; lcd_ctrl:i3|current_state.s13 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.398      ;
-; 0.280 ; lcd_ctrl:i3|current_state.s1   ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.400      ;
-; 0.282 ; lcd_ctrl:i3|current_state.s8   ; lcd_ctrl:i3|current_state.s9  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.402      ;
-; 0.283 ; lcd_ctrl:i3|current_state.s6   ; lcd_ctrl:i3|current_state.s7  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.403      ;
-; 0.283 ; lcd_ctrl:i3|current_state.s5   ; lcd_ctrl:i3|current_state.s6  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.403      ;
-; 0.299 ; lcd_ctrl:i3|current_state.s4   ; lcd_ctrl:i3|current_state.s5  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.419      ;
-; 0.316 ; lcd_ctrl:i3|current_state.s13  ; lcd_ctrl:i3|current_state.s2  ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.436      ;
-; 0.370 ; lcd_ctrl:i3|current_state.s11  ; lcd_ctrl:i3|current_state.s12 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.490      ;
-+-------+--------------------------------+-------------------------------+---------------------+---------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'freq_divider:i1|out'                                                                                                               ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.188 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.307      ;
+; 0.195 ; lcd_ctrl:i3|current_state.s15   ; lcd_ctrl:i3|current_state.s16   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.314      ;
+; 0.201 ; lcd_ctrl:i3|current_state.s1    ; lcd_ctrl:i3|current_state.s2    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.320      ;
+; 0.201 ; lcd_ctrl:i3|current_state.s7    ; lcd_ctrl:i3|current_state.s8    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.320      ;
+; 0.204 ; lcd_ctrl:i3|current_state.s18   ; lcd_ctrl:i3|current_state.s19   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.323      ;
+; 0.207 ; lcd_ctrl:i3|current_state.s19   ; lcd_ctrl:i3|current_state.00000 ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.326      ;
+; 0.208 ; lcd_ctrl:i3|current_state.s3    ; lcd_ctrl:i3|current_state.s4    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.327      ;
+; 0.217 ; lcd_ctrl:i3|current_state.s16   ; lcd_ctrl:i3|current_state.s17   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.336      ;
+; 0.267 ; lcd_ctrl:i3|current_state.00000 ; lcd_ctrl:i3|current_state.s1    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.386      ;
+; 0.268 ; lcd_ctrl:i3|current_state.s13   ; lcd_ctrl:i3|current_state.s14   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.036      ; 0.388      ;
+; 0.274 ; lcd_ctrl:i3|current_state.s12   ; lcd_ctrl:i3|current_state.s13   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.393      ;
+; 0.275 ; lcd_ctrl:i3|current_state.s11   ; lcd_ctrl:i3|current_state.s12   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.394      ;
+; 0.276 ; lcd_ctrl:i3|current_state.s2    ; lcd_ctrl:i3|current_state.s3    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.034      ; 0.394      ;
+; 0.282 ; lcd_ctrl:i3|current_state.s6    ; lcd_ctrl:i3|current_state.s7    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.401      ;
+; 0.285 ; lcd_ctrl:i3|current_state.s14   ; lcd_ctrl:i3|current_state.s15   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.404      ;
+; 0.286 ; lcd_ctrl:i3|current_state.s8    ; lcd_ctrl:i3|current_state.s9    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.405      ;
+; 0.287 ; lcd_ctrl:i3|current_state.s10   ; lcd_ctrl:i3|current_state.s11   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.406      ;
+; 0.288 ; lcd_ctrl:i3|current_state.s17   ; lcd_ctrl:i3|current_state.s18   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.407      ;
+; 0.291 ; lcd_ctrl:i3|current_state.s4    ; lcd_ctrl:i3|current_state.s5    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.410      ;
+; 0.344 ; lcd_ctrl:i3|current_state.s9    ; lcd_ctrl:i3|current_state.s10   ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.463      ;
+; 0.351 ; lcd_ctrl:i3|current_state.s5    ; lcd_ctrl:i3|current_state.s6    ; freq_divider:i1|out ; freq_divider:i1|out ; 0.000        ; 0.035      ; 0.470      ;
++-------+---------------------------------+---------------------------------+---------------------+---------------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -612,28 +649,28 @@ No paths to report.
 ; 0.294 ; freq_divider:i1|count[4] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.415      ;
 ; 0.294 ; freq_divider:i1|count[3] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.415      ;
 ; 0.300 ; freq_divider:i1|count[1] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.421      ;
-; 0.302 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.423      ;
-; 0.362 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.483      ;
+; 0.301 ; freq_divider:i1|count[0] ; freq_divider:i1|count[1] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.422      ;
+; 0.361 ; freq_divider:i1|count[5] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.482      ;
 ; 0.442 ; freq_divider:i1|count[2] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.563      ;
 ; 0.443 ; freq_divider:i1|count[4] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.564      ;
 ; 0.452 ; freq_divider:i1|count[3] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.573      ;
+; 0.453 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.574      ;
 ; 0.453 ; freq_divider:i1|count[1] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.574      ;
-; 0.454 ; freq_divider:i1|count[0] ; freq_divider:i1|count[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.575      ;
 ; 0.455 ; freq_divider:i1|count[3] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.576      ;
+; 0.456 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.577      ;
 ; 0.456 ; freq_divider:i1|count[1] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.577      ;
-; 0.457 ; freq_divider:i1|count[0] ; freq_divider:i1|count[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.578      ;
 ; 0.505 ; freq_divider:i1|count[2] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.626      ;
 ; 0.508 ; freq_divider:i1|count[2] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.629      ;
-; 0.515 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.636      ;
+; 0.513 ; freq_divider:i1|count[5] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.634      ;
+; 0.519 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.640      ;
 ; 0.519 ; freq_divider:i1|count[1] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.640      ;
-; 0.520 ; freq_divider:i1|count[0] ; freq_divider:i1|count[4] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.641      ;
+; 0.522 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.643      ;
 ; 0.522 ; freq_divider:i1|count[1] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.643      ;
-; 0.523 ; freq_divider:i1|count[0] ; freq_divider:i1|count[5] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.644      ;
-; 0.596 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.717      ;
-; 0.608 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.729      ;
-; 0.661 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.782      ;
-; 0.675 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.796      ;
-; 0.676 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.797      ;
+; 0.595 ; freq_divider:i1|count[4] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.716      ;
+; 0.607 ; freq_divider:i1|count[3] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.728      ;
+; 0.660 ; freq_divider:i1|count[2] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.781      ;
+; 0.674 ; freq_divider:i1|count[0] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.795      ;
+; 0.674 ; freq_divider:i1|count[1] ; freq_divider:i1|out      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.795      ;
 +-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -648,12 +685,12 @@ No synchronizer chains to report.
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; -0.987 ; 0.187 ; N/A      ; N/A     ; -3.000              ;
-;  clk                 ; -0.987 ; 0.193 ; N/A      ; N/A     ; -3.000              ;
-;  freq_divider:i1|out ; -0.099 ; 0.187 ; N/A      ; N/A     ; -1.000              ;
-; Design-wide TNS      ; -3.455 ; 0.0   ; 0.0      ; 0.0     ; -24.378             ;
-;  clk                 ; -3.297 ; 0.000 ; N/A      ; N/A     ; -10.378             ;
-;  freq_divider:i1|out ; -0.158 ; 0.000 ; N/A      ; N/A     ; -14.000             ;
+; Worst-case Slack     ; -0.988 ; 0.188 ; N/A      ; N/A     ; -3.000              ;
+;  clk                 ; -0.988 ; 0.193 ; N/A      ; N/A     ; -3.000              ;
+;  freq_divider:i1|out ; -0.063 ; 0.188 ; N/A      ; N/A     ; -1.000              ;
+; Design-wide TNS      ; -3.414 ; 0.0   ; 0.0      ; 0.0     ; -30.378             ;
+;  clk                 ; -3.303 ; 0.000 ; N/A      ; N/A     ; -10.378             ;
+;  freq_divider:i1|out ; -0.111 ; 0.000 ; N/A      ; N/A     ; -20.000             ;
 +----------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -685,13 +722,13 @@ No synchronizer chains to report.
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
 ; adc[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; adc[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; adc[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adc[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adc[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adc[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; adc[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adc[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; adc[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; adc[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; rst                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; intr                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -773,7 +810,7 @@ No synchronizer chains to report.
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
 ; clk                 ; clk                 ; 27       ; 0        ; 0        ; 0        ;
-; freq_divider:i1|out ; freq_divider:i1|out ; 15       ; 0        ; 0        ; 0        ;
+; freq_divider:i1|out ; freq_divider:i1|out ; 21       ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -784,7 +821,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
 ; clk                 ; clk                 ; 27       ; 0        ; 0        ; 0        ;
-; freq_divider:i1|out ; freq_divider:i1|out ; 15       ; 0        ; 0        ; 0        ;
+; freq_divider:i1|out ; freq_divider:i1|out ; 21       ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -809,9 +846,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 10    ; 10   ;
-; Unconstrained Input Port Paths  ; 33    ; 33   ;
+; Unconstrained Input Port Paths  ; 63    ; 63   ;
 ; Unconstrained Output Ports      ; 12    ; 12   ;
-; Unconstrained Output Port Paths ; 66    ; 66   ;
+; Unconstrained Output Port Paths ; 121   ; 121  ;
 +---------------------------------+-------+------+
 
 
@@ -907,7 +944,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 29 11:26:08 2022
+    Info: Processing started: Fri Apr 29 12:06:44 2022
 Info: Command: quartus_sta temprature_sensor -c temprature_sensor
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -925,59 +962,59 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.987
+Info (332146): Worst-case setup slack is -0.988
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.987              -3.297 clk 
-    Info (332119):    -0.099              -0.158 freq_divider:i1|out 
+    Info (332119):    -0.988              -3.303 clk 
+    Info (332119):    -0.063              -0.111 freq_divider:i1|out 
 Info (332146): Worst-case hold slack is 0.358
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.358               0.000 freq_divider:i1|out 
-    Info (332119):     0.361               0.000 clk 
+    Info (332119):     0.360               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -10.000 clk 
-    Info (332119):    -1.000             -14.000 freq_divider:i1|out 
+    Info (332119):    -1.000             -20.000 freq_divider:i1|out 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.768
+Info (332146): Worst-case setup slack is -0.767
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.768              -2.328 clk 
-    Info (332119):     0.015               0.000 freq_divider:i1|out 
+    Info (332119):    -0.767              -2.323 clk 
+    Info (332119):     0.052               0.000 freq_divider:i1|out 
 Info (332146): Worst-case hold slack is 0.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.311               0.000 freq_divider:i1|out 
-    Info (332119):     0.319               0.000 clk 
+    Info (332119):     0.320               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -10.000 clk 
-    Info (332119):    -1.000             -14.000 freq_divider:i1|out 
+    Info (332119):    -1.000             -20.000 freq_divider:i1|out 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.110
+Info (332146): Worst-case setup slack is -0.109
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.110              -0.110 clk 
-    Info (332119):     0.391               0.000 freq_divider:i1|out 
-Info (332146): Worst-case hold slack is 0.187
+    Info (332119):    -0.109              -0.109 clk 
+    Info (332119):     0.415               0.000 freq_divider:i1|out 
+Info (332146): Worst-case hold slack is 0.188
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.187               0.000 freq_divider:i1|out 
+    Info (332119):     0.188               0.000 freq_divider:i1|out 
     Info (332119):     0.193               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
@@ -985,13 +1022,13 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -10.378 clk 
-    Info (332119):    -1.000             -14.000 freq_divider:i1|out 
+    Info (332119):    -1.000             -20.000 freq_divider:i1|out 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4772 megabytes
-    Info: Processing ended: Fri Apr 29 11:26:10 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Fri Apr 29 12:06:48 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

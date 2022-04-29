@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC
 vbin_bcd
-Z1 !s110 1651220490
+Z1 !s110 1651225870
 !i10b 1
 !s100 ElhIc1NGWJR>oQmER]2UJ2
 Ih2WMB29Cz1@YYH9e8QFGB1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1651220490.000000
+Z4 !s108 1651225870.000000
 Z5 !s107 temprature_sensor_tb.v|temprature_sensor.v|led_ctrl.v|lcd_ctrl.v|freq_divider.v|bin_bcd.v|
 Z6 !s90 bin_bcd.v|freq_divider.v|lcd_ctrl.v|led_ctrl.v|temprature_sensor.v|temprature_sensor_tb.v|
 !i113 1
@@ -49,7 +49,7 @@ R6
 !i113 1
 R7
 Ehard_block
-Z8 w1651224372
+Z8 w1651226811
 Z9 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z10 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
 Z11 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -65,9 +65,9 @@ VX3h66Qc`1<U_AEbLaz?3J3
 !s100 A`ID_i56<Ua56=ZD=[EG=2
 Z17 OV;C;10.5b;63
 32
-Z18 !s110 1651224676
+Z18 !s110 1651226841
 !i10b 1
-Z19 !s108 1651224676.000000
+Z19 !s108 1651226841.000000
 Z20 !s90 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
 Z21 !s107 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
 !i113 1
@@ -96,11 +96,11 @@ R22
 vlcd_ctrl
 R1
 !i10b 1
-!s100 Mi2YQ=Sa:gL6U;Mg:e2Vl3
-I1cWB:TfNdk42l;@3M0DaT1
+!s100 E3J3U8X?gmT0PM[nWj::D0
+IYnXI5;4IgUB5l;B3dm_oS1
 R2
 R0
-w1651220487
+w1651225828
 8lcd_ctrl.v
 Flcd_ctrl.v
 L0 1
@@ -209,10 +209,10 @@ R12
 R13
 R31
 Z32 DEx4 work 17 temprature_sensor 0 22 @KFF:hgg__IC@T@An^=Vg1
-l229
+l260
 L119
-V`<g3eK^hWRm7fF<63QajA2
-!s100 zgF=L5[>j:IRKzz21J3be3
+VXXeMnjCbRJ1Do^7NAHQzR2
+!s100 84iWVFMS<dhE`]cd]LSQT0
 R17
 32
 R18

@@ -56,6 +56,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "adc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adc[3]",
+					"strict" : false
+				},
+				{
 					"name" : "adc[0]",
 					"strict" : false
 				},
@@ -68,19 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "adc[4]",
-					"strict" : false
-				},
-				{
 					"name" : "adc[5]",
 					"strict" : false
 				},
 				{
 					"name" : "adc[6]",
-					"strict" : false
-				},
-				{
-					"name" : "adc[3]",
 					"strict" : false
 				},
 				{

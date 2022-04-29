@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Apr 29 11:25:57 2022
+Analysis & Synthesis Status : Successful - Fri Apr 29 12:06:30 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : temprature_sensor
 Top-level Entity Name : temprature_sensor
 Family : Cyclone IV E
-Total logic elements : 38
-    Total combinational functions : 27
-    Dedicated logic registers : 21
-Total registers : 21
+Total logic elements : 62
+    Total combinational functions : 45
+    Dedicated logic registers : 27
+Total registers : 27
 Total pins : 23
 Total virtual pins : 0
 Total memory bits : 0
