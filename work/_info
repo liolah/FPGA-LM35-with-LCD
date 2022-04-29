@@ -9,207 +9,207 @@ z2
 cModel Technology
 Z0 dC:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC
 vbin_bcd
-Z1 !s110 1651255563
+Z1 !s110 1651261793
 !i10b 1
 !s100 ElhIc1NGWJR>oQmER]2UJ2
 Ih2WMB29Cz1@YYH9e8QFGB1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
+Z3 dC:/Users/hesha/Desktop/Digital Electronics Project/Code
 w1651218726
 8bin_bcd.v
 Fbin_bcd.v
 L0 1
-Z3 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1651255563.000000
-Z5 !s107 temprature_sensor_tb.v|temprature_sensor.v|led_ctrl.v|lcd_ctrl.v|freq_divider.v|bin_bcd.v|
-Z6 !s90 bin_bcd.v|freq_divider.v|lcd_ctrl.v|led_ctrl.v|temprature_sensor.v|temprature_sensor_tb.v|
+Z5 !s108 1651261793.000000
+Z6 !s107 temprature_sensor_tb.v|temprature_sensor.v|led_ctrl.v|lcd_ctrl.v|freq_divider.v|bin_bcd.v|
+Z7 !s90 bin_bcd.v|freq_divider.v|lcd_ctrl.v|led_ctrl.v|temprature_sensor.v|temprature_sensor_tb.v|
 !i113 1
-Z7 tCvgOpt 0
+Z8 tCvgOpt 0
 vfreq_divider
 R1
 !i10b 1
-!s100 0EzNRjOKfTJDnI`I7;0WL0
-I98XJooon`nKQl1JH3oF2H2
+!s100 l`[o>RAnjUz?;E[iclfAA0
+IbYoR4LljUhNM7BKO`NHnm3
 R2
-R0
-w1651255541
+R3
+w1651259971
 8freq_divider.v
 Ffreq_divider.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 1
 R7
+!i113 1
+R8
 Ehard_block
-Z8 w1651231393
-Z9 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z10 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
-Z11 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z14 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
-R0
-Z15 8.\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho
-Z16 F.\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho
+Z9 w1651260009
+Z10 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z11 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
+Z12 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z14 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z15 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
+R3
+Z16 8.\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho
+Z17 F.\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho
 l0
 L34
 VX3h66Qc`1<U_AEbLaz?3J3
 !s100 A`ID_i56<Ua56=ZD=[EG=2
-Z17 OV;C;10.5b;63
+Z18 OV;C;10.5b;63
 32
-Z18 !s110 1651234262
+Z19 !s110 1651261679
 !i10b 1
-Z19 !s108 1651234262.000000
-Z20 !s90 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
-Z21 !s107 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
+Z20 !s108 1651261679.000000
+Z21 !s90 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
+Z22 !s107 .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor.vho|
 !i113 1
-Z22 tExplicit 1 CvgOpt 0
+Z23 tExplicit 1 CvgOpt 0
 Astructure
-R9
 R10
 R11
 R12
 R13
 R14
+R15
 DEx4 work 10 hard_block 0 22 X3h66Qc`1<U_AEbLaz?3J3
 l64
 L50
 V__ALokoYT=OF5a6[iF8bT3
 !s100 2S?JL;LJ@<3:BHXTNcXS]3
-R17
-32
 R18
-!i10b 1
+32
 R19
+!i10b 1
 R20
 R21
-!i113 1
 R22
+!i113 1
+R23
 vlcd_ctrl
 R1
 !i10b 1
-!s100 M896nZlOiRokHl4^ZB7S70
-Ii`FGNRGVS0loHd[:MW4bC3
+!s100 2NUFDS9SQAzeMfSk1?Rfz2
+ICfV]3POIIY60Vm89W^]Y20
 R2
-R0
-w1651255511
+R3
+w1651261487
 8lcd_ctrl.v
 Flcd_ctrl.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 1
 R7
+!i113 1
+R8
 vled_ctrl
 R1
 !i10b 1
 !s100 SXfKbBMe8fAMRmWP30PU=3
 I@:QiO1LWLiBNCgg@To6EK0
 R2
-R0
+R3
 w1651218111
 8led_ctrl.v
 Fled_ctrl.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 1
 R7
+!i113 1
+R8
 vtemp_sensor
-Z23 !s110 1651211025
+Z24 !s110 1651211025
 !i10b 1
 !s100 ZB@XTOTzEij6VT0IREARj3
 I>bl_QJ3GY2@FJX4k<>zXY1
 R2
 R0
 w1651210879
-Z24 8temprature_sensor.v
-Z25 Ftemprature_sensor.v
+Z25 8temprature_sensor.v
+Z26 Ftemprature_sensor.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-Z26 !s108 1651211025.000000
-R5
+Z27 !s108 1651211025.000000
 R6
-!i113 1
 R7
+!i113 1
+R8
 vtemp_sensor_tb
-R23
+R24
 !i10b 1
 !s100 iH1;C5lo7D_lKS0RgH[Gz1
 Iel54Jz[D5m4BZ^h7FjcjJ3
 R2
 R0
 w1651210673
-Z27 8temprature_sensor_tb.v
-Z28 Ftemprature_sensor_tb.v
+Z28 8temprature_sensor_tb.v
+Z29 Ftemprature_sensor_tb.v
 L0 2
-R3
+R4
 r1
 !s85 0
 31
-R26
-R5
+R27
 R6
-!i113 1
 R7
+!i113 1
+R8
 vtemprature_sensor
 R1
 !i10b 1
 !s100 NHYb@=KWJoS=hKfLbm`V[1
 I6dXfSHzO5Z_RXNzUc;Un`2
 R2
-R0
-w1651246163
-R24
-R25
-L0 1
 R3
+w1651246163
+R25
+R26
+L0 1
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 1
 R7
+!i113 1
+R8
 vtemprature_sensor_tb
 R1
 !i10b 1
 !s100 eKh9iA58OJ@<iVj4h9b`a0
 IHQJ@YMaiKORReYLzD?I:Q3
 R2
-R0
-w1651211222
-R27
-R28
-L0 2
 R3
+w1651211222
+R28
+R29
+L0 2
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 1
 R7
+!i113 1
+R8

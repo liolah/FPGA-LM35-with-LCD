@@ -1,5 +1,5 @@
 Analysis & Synthesis report for temprature_sensor
-Fri Apr 29 17:26:20 2022
+Fri Apr 29 21:50:15 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,10 +17,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Parameter Settings for User Entity Instance: lcd_ctrl:i3
- 12. Port Connectivity Checks: "freq_divider:i1"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 29 17:26:19 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 29 21:50:15 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; temprature_sensor                           ;
 ; Top-level Entity Name              ; temprature_sensor                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 64                                          ;
-;     Total combinational functions  ; 46                                          ;
-;     Dedicated logic registers      ; 45                                          ;
-; Total registers                    ; 45                                          ;
-; Total pins                         ; 24                                          ;
+; Total logic elements               ; 68                                          ;
+;     Total combinational functions  ; 52                                          ;
+;     Dedicated logic registers      ; 33                                          ;
+; Total registers                    ; 33                                          ;
+; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -166,60 +165,62 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; ../../temprature_sensor.v        ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v ;         ;
-; ../../led_ctrl.v                 ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/led_ctrl.v          ;         ;
-; ../../lcd_ctrl.v                 ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/lcd_ctrl.v          ;         ;
-; ../../freq_divider.v             ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/freq_divider.v      ;         ;
-; ../../bin_bcd.v                  ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/bin_bcd.v           ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
+; ../../temprature_sensor.v        ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v ;         ;
+; ../../led_ctrl.v                 ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code/led_ctrl.v          ;         ;
+; ../../lcd_ctrl.v                 ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v          ;         ;
+; ../../freq_divider.v             ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code/freq_divider.v      ;         ;
+; ../../bin_bcd.v                  ; yes             ; User Verilog HDL File  ; C:/Users/hesha/Desktop/Digital Electronics Project/Code/bin_bcd.v           ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 64        ;
-;                                             ;           ;
-; Total combinational functions               ; 46        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 15        ;
-;     -- 3 input functions                    ; 4         ;
-;     -- <=2 input functions                  ; 27        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 23        ;
-;     -- arithmetic mode                      ; 23        ;
-;                                             ;           ;
-; Total registers                             ; 45        ;
-;     -- Dedicated logic registers            ; 45        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 24        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 45        ;
-; Total fan-out                               ; 269       ;
-; Average fan-out                             ; 1.94      ;
-+---------------------------------------------+-----------+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 68                    ;
+;                                             ;                       ;
+; Total combinational functions               ; 52                    ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 28                    ;
+;     -- 3 input functions                    ; 5                     ;
+;     -- <=2 input functions                  ; 19                    ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 41                    ;
+;     -- arithmetic mode                      ; 11                    ;
+;                                             ;                       ;
+; Total registers                             ; 33                    ;
+;     -- Dedicated logic registers            ; 33                    ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 23                    ;
+;                                             ;                       ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+;                                             ;                       ;
+; Maximum fan-out node                        ; freq_divider:i1|count ;
+; Maximum fan-out                             ; 21                    ;
+; Total fan-out                               ; 282                   ;
+; Average fan-out                             ; 2.15                  ;
++---------------------------------------------+-----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name       ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------------+--------------+
-; |temprature_sensor         ; 46 (25)             ; 45 (25)                   ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |temprature_sensor             ; temprature_sensor ; work         ;
-;    |lcd_ctrl:i3|           ; 18 (18)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|lcd_ctrl:i3 ; lcd_ctrl          ; work         ;
-;    |led_ctrl:i0|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|led_ctrl:i0 ; led_ctrl          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
+; |temprature_sensor         ; 52 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |temprature_sensor                 ; temprature_sensor ; work         ;
+;    |bin_bcd:i2|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|bin_bcd:i2      ; bin_bcd           ; work         ;
+;    |freq_divider:i1|       ; 13 (13)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|freq_divider:i1 ; freq_divider      ; work         ;
+;    |lcd_ctrl:i3|           ; 32 (32)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|lcd_ctrl:i3     ; lcd_ctrl          ; work         ;
+;    |led_ctrl:i0|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|led_ctrl:i0     ; led_ctrl          ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -252,19 +253,20 @@ Encoding Type:  One-Hot
 +---------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+---------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; lcd_ctrl:i3|current_state~4           ; Lost fanout        ;
-; lcd_ctrl:i3|current_state~5           ; Lost fanout        ;
-; lcd_ctrl:i3|current_state~6           ; Lost fanout        ;
-; lcd_ctrl:i3|current_state~7           ; Lost fanout        ;
-; lcd_ctrl:i3|current_state~8           ; Lost fanout        ;
-; count_temp[25..28]                    ; Lost fanout        ;
-; Total Number of Removed Registers = 9 ;                    ;
-+---------------------------------------+--------------------+
++----------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                         ;
++----------------------------------------+-----------------------------------+
+; Register name                          ; Reason for Removal                ;
++----------------------------------------+-----------------------------------+
+; lcd_ctrl:i3|current_state~4            ; Lost fanout                       ;
+; lcd_ctrl:i3|current_state~5            ; Lost fanout                       ;
+; lcd_ctrl:i3|current_state~6            ; Lost fanout                       ;
+; lcd_ctrl:i3|current_state~7            ; Lost fanout                       ;
+; lcd_ctrl:i3|current_state~8            ; Lost fanout                       ;
+; freq_divider:i1|count_temp[12]         ; Merged with freq_divider:i1|count ;
+; freq_divider:i1|count_temp[13..20]     ; Lost fanout                       ;
+; Total Number of Removed Registers = 14 ;                                   ;
++----------------------------------------+-----------------------------------+
 
 
 +------------------------------------------------------+
@@ -272,7 +274,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 45    ;
+; Total registers                              ; 33    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -317,36 +319,27 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "freq_divider:i1"                                                                     ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; count ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 24                          ;
-; cycloneiii_ff         ; 45                          ;
+; boundary_port         ; 23                          ;
+; cycloneiii_ff         ; 33                          ;
 ;     CLR               ; 20                          ;
-;     plain             ; 25                          ;
-; cycloneiii_lcell_comb ; 52                          ;
-;     arith             ; 23                          ;
-;         2 data inputs ; 22                          ;
+;     plain             ; 13                          ;
+; cycloneiii_lcell_comb ; 57                          ;
+;     arith             ; 11                          ;
+;         2 data inputs ; 10                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 29                          ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 15                          ;
+;     normal            ; 46                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 28                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.30                        ;
-; Average LUT depth     ; 2.43                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -365,39 +358,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 29 17:26:07 2022
+    Info: Processing started: Fri Apr 29 21:50:01 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off temprature_sensor -c temprature_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code_external_adc/temprature_sensor.v
-    Info (12023): Found entity 1: temprature_sensor File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code_external_adc/led_ctrl.v
-    Info (12023): Found entity 1: led_ctrl File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/led_ctrl.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code_external_adc/lcd_ctrl.v
-    Info (12023): Found entity 1: lcd_ctrl File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/lcd_ctrl.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code_external_adc/freq_divider.v
-    Info (12023): Found entity 1: freq_divider File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/freq_divider.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code_external_adc/bin_bcd.v
-    Info (12023): Found entity 1: bin_bcd File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/bin_bcd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code/temprature_sensor.v
+    Info (12023): Found entity 1: temprature_sensor File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code/led_ctrl.v
+    Info (12023): Found entity 1: led_ctrl File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/led_ctrl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code/lcd_ctrl.v
+    Info (12023): Found entity 1: lcd_ctrl File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code/freq_divider.v
+    Info (12023): Found entity 1: freq_divider File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/freq_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/hesha/desktop/digital electronics project/code/bin_bcd.v
+    Info (12023): Found entity 1: bin_bcd File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/bin_bcd.v Line: 1
 Info (12127): Elaborating entity "temprature_sensor" for the top level hierarchy
-Info (12128): Elaborating entity "led_ctrl" for hierarchy "led_ctrl:i0" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 19
-Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:i1" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 20
-Info (12128): Elaborating entity "bin_bcd" for hierarchy "bin_bcd:i2" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 21
-Info (12128): Elaborating entity "lcd_ctrl" for hierarchy "lcd_ctrl:i3" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 22
+Info (12128): Elaborating entity "led_ctrl" for hierarchy "led_ctrl:i0" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v Line: 12
+Info (12128): Elaborating entity "freq_divider" for hierarchy "freq_divider:i1" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v Line: 13
+Info (12128): Elaborating entity "bin_bcd" for hierarchy "bin_bcd:i2" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v Line: 14
+Info (12128): Elaborating entity "lcd_ctrl" for hierarchy "lcd_ctrl:i3" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/temprature_sensor.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(152): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 152
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(158): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 158
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(164): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 164
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(170): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 170
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(188): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 188
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(194): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 194
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(200): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 200
+Warning (10235): Verilog HDL Always Construct warning at lcd_ctrl.v(206): variable "bcd" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/hesha/Desktop/Digital Electronics Project/Code/lcd_ctrl.v Line: 206
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "intr" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 3
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 64 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4759 megabytes
-    Info: Processing ended: Fri Apr 29 17:26:20 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 68 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Fri Apr 29 21:50:15 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -111,7 +111,7 @@ s18:begin
 next_state = s19;
 end
 s19:begin
-next_state = s0;
+next_state = s2;
 end
 
 default: next_state = s0;
