@@ -36,7 +36,7 @@ parameter [7:0] display_on = 8'b00001100,
 
 reg [4:0] current_state = 4'b0000, next_state;
 
-always @(current_state, intr)
+always @(current_state)
 begin: next_state_logic
 case(current_state)
 s0:begin
@@ -49,11 +49,11 @@ s2:begin
 next_state = s3;
 end
 s3:begin
-  if (intr) begin
-    next_state = s3;
-  end else begin
+  // if (intr) begin
+  //   next_state = s3;
+  // end else begin
     next_state = s4;
-  end
+  // end
 end
 s4:begin
 next_state = s5;
@@ -118,7 +118,7 @@ current_state = next_state;
 end
 end
 
-always @(current_state, bcd)
+always @(current_state)
 begin: output_logic
 case (current_state)
 s0: begin
@@ -149,25 +149,29 @@ s4: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[15:12] };
+lcd_data = { 4'b0011, 4'b0001 };
+// lcd_data = { 4'b0011, bcd[15:12] };
 end
 s5: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[15:12] };
+lcd_data = { 4'b0011, 4'b0001 };
+// lcd_data = { 4'b0011, bcd[15:12] };
 end
 s6: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[11:8] };
+lcd_data = { 4'b0011, 4'b0010};
+// lcd_data = { 4'b0011, bcd[11:8] };
 end
 s7: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[11:8] };
+lcd_data = { 4'b0011, 4'b0010};
+// lcd_data = { 4'b0011, bcd[11:8] };
 end
 s8: begin
 en = 1;
@@ -185,25 +189,29 @@ s10: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[7:4] };
+lcd_data = { 4'b0011, 4'b0011};
+// lcd_data = { 4'b0011, bcd[7:4] };
 end
 s11: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[7:4] };
+lcd_data = { 4'b0011, 4'b0011};
+// lcd_data = { 4'b0011, bcd[7:4] };
 end
 s12: begin
 en = 1;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
+lcd_data = { 4'b0011, 4'b0100};
+// lcd_data = { 4'b0011, bcd[3:0] };
 end
 s13: begin
 en = 0;
 rs = 1;
 wr = 1;
-lcd_data = { 4'b0011, bcd[3:0] };
+lcd_data = { 4'b1010, 4'b1010};
+// lcd_data = { 4'b0011, bcd[3:0] };
 end
 s14: begin
 en = 1;

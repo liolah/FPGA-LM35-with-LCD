@@ -1,5 +1,5 @@
 Analysis & Synthesis report for temprature_sensor
-Fri Apr 29 12:06:31 2022
+Fri Apr 29 13:22:57 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,15 +45,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 29 12:06:30 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 29 13:22:57 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; temprature_sensor                           ;
 ; Top-level Entity Name              ; temprature_sensor                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 62                                          ;
-;     Total combinational functions  ; 45                                          ;
-;     Dedicated logic registers      ; 27                                          ;
-; Total registers                    ; 27                                          ;
+; Total logic elements               ; 67                                          ;
+;     Total combinational functions  ; 48                                          ;
+;     Dedicated logic registers      ; 48                                          ;
+; Total registers                    ; 48                                          ;
 ; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -184,20 +184,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 62        ;
+; Estimated Total logic elements              ; 67        ;
 ;                                             ;           ;
-; Total combinational functions               ; 45        ;
+; Total combinational functions               ; 48        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 28        ;
-;     -- 3 input functions                    ; 5         ;
-;     -- <=2 input functions                  ; 12        ;
+;     -- 4 input functions                    ; 15        ;
+;     -- 3 input functions                    ; 3         ;
+;     -- <=2 input functions                  ; 30        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 41        ;
-;     -- arithmetic mode                      ; 4         ;
+;     -- normal mode                          ; 23        ;
+;     -- arithmetic mode                      ; 25        ;
 ;                                             ;           ;
-; Total registers                             ; 27        ;
-;     -- Dedicated logic registers            ; 27        ;
+; Total registers                             ; 48        ;
+;     -- Dedicated logic registers            ; 48        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 23        ;
@@ -205,9 +205,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 27        ;
-; Total fan-out                               ; 263       ;
-; Average fan-out                             ; 2.23      ;
+; Maximum fan-out                             ; 48        ;
+; Total fan-out                               ; 304       ;
+; Average fan-out                             ; 2.14      ;
 +---------------------------------------------+-----------+
 
 
@@ -216,11 +216,10 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name       ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
-; |temprature_sensor         ; 45 (0)              ; 27 (0)                    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |temprature_sensor                 ; temprature_sensor ; work         ;
-;    |bin_bcd:i2|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|bin_bcd:i2      ; bin_bcd           ; work         ;
-;    |freq_divider:i1|       ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|freq_divider:i1 ; freq_divider      ; work         ;
-;    |lcd_ctrl:i3|           ; 32 (32)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|lcd_ctrl:i3     ; lcd_ctrl          ; work         ;
-;    |led_ctrl:i0|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|led_ctrl:i0     ; led_ctrl          ; work         ;
+; |temprature_sensor         ; 48 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |temprature_sensor                 ; temprature_sensor ; work         ;
+;    |freq_divider:i1|       ; 27 (27)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|freq_divider:i1 ; freq_divider      ; work         ;
+;    |lcd_ctrl:i3|           ; 18 (18)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|lcd_ctrl:i3     ; lcd_ctrl          ; work         ;
+;    |led_ctrl:i0|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |temprature_sensor|led_ctrl:i0     ; led_ctrl          ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -264,7 +263,7 @@ Encoding Type:  One-Hot
 ; lcd_ctrl:i3|current_state~6           ; Lost fanout        ;
 ; lcd_ctrl:i3|current_state~7           ; Lost fanout        ;
 ; lcd_ctrl:i3|current_state~8           ; Lost fanout        ;
-; freq_divider:i1|count[6,7]            ; Lost fanout        ;
+; freq_divider:i1|count[27,28]          ; Lost fanout        ;
 ; Total Number of Removed Registers = 7 ;                    ;
 +---------------------------------------+--------------------+
 
@@ -274,10 +273,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 27    ;
+; Total registers                              ; 48    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Clear ; 47    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1     ;
 ; Number of registers using Preset             ; 0     ;
@@ -325,21 +324,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 23                          ;
-; cycloneiii_ff         ; 27                          ;
-;     CLR               ; 26                          ;
+; cycloneiii_ff         ; 48                          ;
+;     CLR               ; 47                          ;
 ;     ENA               ; 1                           ;
-; cycloneiii_lcell_comb ; 50                          ;
-;     arith             ; 4                           ;
-;         2 data inputs ; 3                           ;
+; cycloneiii_lcell_comb ; 54                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 24                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 46                          ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 28                          ;
+;     normal            ; 29                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.63                        ;
+; Max LUT depth         ; 3.50                        ;
+; Average LUT depth     ; 2.48                        ;
 +-----------------------+-----------------------------+
 
 
@@ -348,7 +347,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -358,7 +357,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 29 12:06:09 2022
+    Info: Processing started: Fri Apr 29 13:22:42 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off temprature_sensor -c temprature_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -381,14 +380,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 86 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "intr" File: C:/Users/hesha/Desktop/Digital Electronics Project/Code_external_ADC/temprature_sensor.v Line: 3
+Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 63 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4760 megabytes
-    Info: Processing ended: Fri Apr 29 12:06:31 2022
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:49
+    Info (21061): Implemented 68 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Fri Apr 29 13:22:57 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:31
 
 

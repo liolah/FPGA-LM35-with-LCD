@@ -25,3 +25,16 @@
 # Loading timing data from .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor_vhd.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ns  Iteration: 0  Instance: /temprature_sensor_tb File: temprature_sensor_tb.v
+add wave -position insertpoint sim:/temprature_sensor_tb/*
+run
+run
+restart
+# Loading instances from .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor_vhd.sdo
+# Loading timing data from .\quartus\temprature_sensor\simulation\modelsim\temprature_sensor_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ns  Iteration: 0  Instance: /temprature_sensor_tb File: temprature_sensor_tb.v
+run
+run
+run
+run
+run
