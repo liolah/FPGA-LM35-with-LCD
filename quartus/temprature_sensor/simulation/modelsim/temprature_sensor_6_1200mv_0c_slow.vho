@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "04/29/2022 21:50:31"
+-- DATE "04/30/2022 09:37:23"
 
 -- 
 -- Device: Altera EP4CE22F17C6 Package FBGA256
@@ -82,11 +82,11 @@ ENTITY 	temprature_sensor IS
 	rst : IN std_logic;
 	intr : IN std_logic;
 	adc : IN std_logic_vector(7 DOWNTO 0);
-	en : OUT std_logic;
-	rs : OUT std_logic;
-	wr : OUT std_logic;
-	led_state : OUT std_logic;
-	lcd_data : OUT std_logic_vector(7 DOWNTO 0)
+	en : BUFFER std_logic;
+	rs : BUFFER std_logic;
+	wr : BUFFER std_logic;
+	led_state : BUFFER std_logic;
+	lcd_data : BUFFER std_logic_vector(7 DOWNTO 0)
 	);
 END temprature_sensor;
 

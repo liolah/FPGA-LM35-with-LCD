@@ -10,18 +10,18 @@ adc[4] => adc[4].IN2
 adc[5] => adc[5].IN2
 adc[6] => adc[6].IN2
 adc[7] => adc[7].IN2
-en <= lcd_ctrl:i3.port6
-rs <= lcd_ctrl:i3.port7
-wr <= lcd_ctrl:i3.port4
-led_state <= led_ctrl:i0.port1
-lcd_data[0] <= lcd_ctrl:i3.port5
-lcd_data[1] <= lcd_ctrl:i3.port5
-lcd_data[2] <= lcd_ctrl:i3.port5
-lcd_data[3] <= lcd_ctrl:i3.port5
-lcd_data[4] <= lcd_ctrl:i3.port5
-lcd_data[5] <= lcd_ctrl:i3.port5
-lcd_data[6] <= lcd_ctrl:i3.port5
-lcd_data[7] <= lcd_ctrl:i3.port5
+en << lcd_ctrl:i3.port6
+rs << lcd_ctrl:i3.port7
+wr << lcd_ctrl:i3.port4
+led_state << led_ctrl:i0.port1
+lcd_data[0] << lcd_ctrl:i3.port5
+lcd_data[1] << lcd_ctrl:i3.port5
+lcd_data[2] << lcd_ctrl:i3.port5
+lcd_data[3] << lcd_ctrl:i3.port5
+lcd_data[4] << lcd_ctrl:i3.port5
+lcd_data[5] << lcd_ctrl:i3.port5
+lcd_data[6] << lcd_ctrl:i3.port5
+lcd_data[7] << lcd_ctrl:i3.port5
 
 
 |temprature_sensor|led_ctrl:i0

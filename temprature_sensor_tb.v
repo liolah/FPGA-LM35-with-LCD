@@ -24,10 +24,8 @@ rst = 0;
 // rst = 0;
 end
 
-always @(wr) begin
-if (!wr) begin
+always @(posedge wr) begin
 intr = 1;
-end
 end
 
 always @(intr) begin
